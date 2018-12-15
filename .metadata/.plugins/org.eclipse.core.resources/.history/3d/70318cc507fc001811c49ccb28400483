@@ -1,0 +1,15 @@
+package mapaProjecao;
+
+public class MapaProjecaoLatLong extends MapaProjecao {
+
+	/**
+	 * Caso a coordenada X (Longitude) ou a coordenada Y (Latitude) sejam maior
+	 * que os seus respectivos limites, é impresso um aviso e o objeto se 
+	 * autodestrói.
+	 */
+	public MapaProjecaoLatLong(float coordX, float coordY) {
+		super(coordX, coordY);
+		if(coordX < -90.0 || coordX > 90.0||)
+	}
+
+}

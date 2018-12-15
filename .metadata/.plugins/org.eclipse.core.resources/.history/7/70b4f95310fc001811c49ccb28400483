@@ -1,0 +1,20 @@
+package mapaProjecao;
+
+public class BibliotecaCalculosGeograficos2 {
+
+	AdaptadoraConcreta1 adapter1 = new AdaptadoraConcreta1();
+
+	// Todos os dados da biblioteca seguem o padrão x1, x2, y1, y2
+	public final float coordsUTM[] = {770900.20f, 423582.51f, 3937763.21f, 3590245.98f};
+	public final String zonaUTM = "53S";
+	public final float coordsLatLong[] = {-25.609826f, 58.922799f, 137.460938f, -150.820313f};
+
+	public float distanciaUTM(float x1, float x2, float y1, float y2) throws Throwable{
+		return adapter1.calcularDistanciaUTM(x1, x2, y1, y2);
+	}
+
+	public float distanciaLatLong(float x1, float x2, float y1, float y2) throws Throwable{
+		return adapter1.calcularDistanciaLatLong(x1, x2, y1, y2);
+	}
+
+}

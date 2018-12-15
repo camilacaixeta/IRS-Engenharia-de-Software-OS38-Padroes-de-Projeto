@@ -1,0 +1,19 @@
+package mapaProjecao;
+
+/**
+ * Lida com a abstração de Fabricas Abstratas. Na implementação foi convertida para
+ * evitar ambiguidades de chamadas provenientes do mesmo tipo herdado/implementado.
+ */
+public abstract class FabricaAbstrata {
+
+	protected static FabricaAbstrata fabricaAbstrata = null;
+
+	// Método fabricador de Mapa
+	public abstract MapaProjecao criarMapaProjecao(float x, float y);
+
+	// Método de retorno da instância
+	public static FabricaAbstrata instancia() {
+		return fabricaAbstrata;
+	}
+
+}

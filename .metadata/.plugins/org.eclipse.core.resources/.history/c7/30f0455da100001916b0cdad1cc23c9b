@@ -1,0 +1,33 @@
+package mapaProjecao;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main (String[] args){
+
+		Scanner in = new Scanner(System.in);
+		FabricaAbstrata fb;
+		MapaProjecao mapaProj;
+
+		System.out.print("Selecione uma opção de execução (1-4): ");
+		String opcao = in.nextLine();
+
+		switch(opcao){
+		case "1": // Execução 1
+			fb = FabricaMapaProjLatLong.instancia();
+			mapaProj = fb.criarMapaProjecao();
+			break;
+		case "2":
+			break;
+		case "3":
+			break;
+		case "4":
+			break;
+		default:
+			System.out.println("\nNão foi escolhida nenhuma opção.");
+		}
+
+	}
+
+}

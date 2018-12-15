@@ -1,0 +1,41 @@
+package mapaProjecao;
+
+public abstract class MapaProjecao {
+
+	private float coordX;
+	private float coordY;
+	private AdaptadoraBase ab;
+
+	public MapaProjecao(float coordX, float coordY) {
+		super();
+		this.coordX = coordX;
+		this.coordY = coordY;
+	}
+
+	public float getCoordX() {
+		return coordX;
+	}
+
+	public void setCoordX(float coordX) {
+		this.coordX = coordX;
+	}
+
+	public float getCoordY() {
+		return coordY;
+	}
+
+	public void setCoordY(float coordY) {
+		this.coordY = coordY;
+	}
+
+	public AdaptadoraBase getAb() {
+		return ab;
+	}
+
+	public void setAb(AdaptadoraBase ab) {
+		this.ab = ab;
+	}
+
+	public abstract float calcularDistancia(float x1, float x2, float y1, float y2);
+
+}

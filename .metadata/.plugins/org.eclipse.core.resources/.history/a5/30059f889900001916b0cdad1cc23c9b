@@ -1,0 +1,13 @@
+package mapaProjecao;
+
+public class BibliotecaCalculosGeograficos1 {
+
+	public float distanciaUTM(float x1, float x2, float y1, float y2) throws Throwable{
+		return adapter.calcularDistanciaUTM(x1, x2, y1, y2);
+	}
+
+	public float distanciaLatLong(float x1, float x2, float y1, float y2) throws Throwable{
+		return adapter.calcularDistanciaLatLong(x1, x2, y1, y2);
+	}
+
+}

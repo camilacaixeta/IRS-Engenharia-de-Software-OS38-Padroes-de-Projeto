@@ -1,0 +1,27 @@
+package mapaProjecao;
+
+public class MapaProjecaoLatLong extends MapaProjecao {
+
+	/**
+	 * Caso a coordenada X (Longitude) ou a coordenada Y (Latitude) sejam maior
+	 * que os seus respectivos limites, é impresso um aviso e o objeto se
+	 * autodestrói.
+	 * @throws Throwable Um erro ou exceção que indica erro na criação
+	 */
+	public MapaProjecaoLatLong(float coordX, float coordY) throws Throwable {
+		super(coordX, coordY);
+		if(coordY < -90.0 || coordY > 90.0|| coordX < -180.0 || coordX > 180.0){
+			System.out.println("Coordenada inválida - desfazendo criação!");
+			super.finalize();
+		}
+	}
+	
+	/**
+	 * Calcula a distância entre dois pontos de coordenada Latitude/Longitude.
+	 */
+	@Override
+	public float calcularDistancia(float x1, float x2, float y1, float y2){
+		return (float) Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
+	}
+
+}

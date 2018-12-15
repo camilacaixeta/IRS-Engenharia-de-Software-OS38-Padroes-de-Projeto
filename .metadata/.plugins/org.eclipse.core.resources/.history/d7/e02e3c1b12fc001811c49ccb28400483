@@ -1,0 +1,19 @@
+package mapaProjecao;
+
+public class AdaptadoraConcreta1 extends AdaptadoraBase{
+
+	MapaProjecao projecao;
+
+	@Override
+	public float calcularDistanciaUTM(float x1, float x2, float y1, float y2) throws Throwable{
+		projecao = FabricaMapaUTM.instancia().criarMapaProjecao(x1, y1);
+		return projecao.calcularDistancia(x1, x2, y1, y2);
+	}
+
+	@Override
+	public float calcularDistanciaLatLong(float x1, float x2, float y1, float y2) throws Throwable{
+		projecao = FabricaMapaProjLatLong.instancia().criarMapaProjecao(x1, y1);
+		return projecao.calcularDistancia(x1, x2, y1, y2);
+	}
+
+}

@@ -1,0 +1,8 @@
+package mapaProjecao;
+
+public abstract class FabricaAbstrata {
+
+	// Método fabricador de Mapa
+	abstract MapaProjecao criarMapaProjecao(float x, float y);
+
+}

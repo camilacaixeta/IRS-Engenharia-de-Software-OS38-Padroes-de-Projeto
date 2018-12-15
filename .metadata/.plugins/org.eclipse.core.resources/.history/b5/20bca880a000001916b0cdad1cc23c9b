@@ -1,0 +1,23 @@
+package mapaProjecao;
+
+public class FabricaMapaProjLatLong extends FabricaAbstrata {
+
+	private static FabricaMapaProjLatLong instancia;
+
+	private FabricaMapaProjLatLong() {}
+
+	@Override
+	public MapaProjecao criarMapaProjecao(float x, float y) {
+			System.out.println("Criando instância de MapaProjecaoLatLong");
+			return new MapaProjecaoLatLong(x, y);
+	}
+
+	public static FabricaAbstrata instancia() {
+		System.out.println("Obtendo instância de FabricaMapaProjLatLong");
+		if(instancia == null){
+			instancia = new FabricaMapaProjLatLong();
+		}
+		return instancia;
+	}
+
+}

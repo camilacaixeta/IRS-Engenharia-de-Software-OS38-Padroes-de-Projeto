@@ -1,0 +1,15 @@
+package mapaProjecao;
+
+public class FabricaMapaUTM implements FabricaAbstrata {
+
+	FabricaAbstrata fabricaAbstrata = null;
+	
+	
+	
+	@Override
+	public void criarMapaProjecao(float x, float y) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

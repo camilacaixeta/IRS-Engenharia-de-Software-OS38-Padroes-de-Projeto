@@ -1,0 +1,37 @@
+package mapaProjecao;
+
+import java.util.Scanner;
+
+public class MapaProjecao {
+
+	float coordX, coordY;
+
+	public MapaProjecao(float coordX, float coordY) {
+		this.coordX = coordX;
+		this.coordY = coordY;
+	}
+
+	public static void main(String[] args) throws Throwable {
+
+		Scanner in = new Scanner(System.in);
+
+		System.out.print("Digite o caso que queira testar, ou outro valor para o teste padrão: ");
+		String input = in.nextLine();
+		in.close();
+
+		switch(input){
+		default:
+			BibliotecaCalculosGeograficos1 b1 = new BibliotecaCalculosGeograficos1();
+			new StringBuilder()
+			.append("Distância entre latitude e longitude da Biblioteca 1: ")
+			.append(b1.adapter.calcularDistanciaLatLong(b1.coordsLatLong[0], b1.coordsLatLong[1], b1.coordsLatLong[2], b1.coordsLatLong[3]));
+		}
+
+	}
+
+	// Método de Cálculo - Será reimplementado por outras classes
+	public float calcularDistancia(float x1, float x2, float y1, float y2) throws Exception {
+		throw new Exception("Chamada na classe mãe não permitida!!");
+	}
+
+}

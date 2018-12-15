@@ -1,0 +1,65 @@
+package mapaProjecao;
+
+import java.util.Scanner;
+
+public class MapaProjecao {
+
+	float coordX, coordY;
+
+	public MapaProjecao(float coordX, float coordY) {
+		this.coordX = coordX;
+		this.coordY = coordY;
+	}
+
+	public static void main(String[] args) throws Throwable {
+
+		Scanner in = new Scanner(System.in);
+
+		System.out.print("Digite o caso que queira testar(1-?), ou outro valor para o teste padrão: ");
+		String input = in.nextLine();
+		in.close();
+
+		String resultado;
+
+		switch(input){
+
+		case "1": // Caso 1, conforme exercício
+			FabricaAbstrata fb;
+
+			// Cria Instância de Fabrica do tipo FabricaMapaProjLatLong
+			fb = FabricaMapaProjLatLong.instancia();
+
+			// Criar a instancia da Projecão
+			MapaProjecao mapaProj = fb.criarMapaProjecao(0, 0);
+			
+			//Definir a biblioteca a ser utilizada - Usar BibliotecaCalculosGeograficos1
+			mapaProj.
+
+			break;
+
+		default: // Caso de teste usando dados da Biblioteca 1
+			BibliotecaCalculosGeograficos1 b1 = new BibliotecaCalculosGeograficos1();
+			resultado = new StringBuilder()
+					.append("== Biblioteca 1 ==\nDistância entre latitudes e longitudes: ")
+					.append(b1.adapter.calcularDistanciaLatLong(b1.coordsLatLong[0], b1.coordsLatLong[1], b1.coordsLatLong[2],
+							b1.coordsLatLong[3]))
+					.append("km\nDistância entre coordenadas UTM da zona ")
+					.append(b1.zonaUTM)
+					.append(": ")
+					.append(b1.adapter.calcularDistanciaUTM(b1.coordsUTM[0], b1.coordsLatLong[1], b1.coordsLatLong[2],
+							b1.coordsLatLong[3]))
+					.append("km")
+					.toString();
+
+		}
+
+		System.out.println(resultado);
+
+	}
+
+	// Método de Cálculo - Será reimplementado por outras classes
+	public float calcularDistancia(float x1, float x2, float y1, float y2) throws Exception {
+		throw new Exception("Chamada na classe mãe não permitida!!");
+	}
+
+}

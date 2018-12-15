@@ -1,0 +1,18 @@
+package mapaProjecao;
+
+public class FabricaMapaUTM implements FabricaAbstrata {
+
+	private static FabricaAbstrata fabricaAbstrata = new FabricaMapaUTM();
+
+	@Override
+	public void criarMapaProjecao(float x, float y) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public FabricaAbstrata instancia() {
+		return fabricaAbstrata;
+	}
+
+}

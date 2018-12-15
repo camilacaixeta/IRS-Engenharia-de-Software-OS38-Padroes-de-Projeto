@@ -1,0 +1,24 @@
+package mapaProjecao;
+
+public class BibliotecaCalculosGeograficos2 {
+
+	public float distanciaUTM(float x1, float x2, float y1, float y2) throws Throwable{
+		return (float) Math.sqrt(Math.pow(x2-x1, 2) + Math.pow(y2-y1, 2));
+	}
+
+	public float distanciaLatLong(float x1, float x2, float y1, float y2) throws Throwable{
+		double dx = Math.toRadians(x2 - x1);
+		double dy = Math.toRadians(y2 - y1);
+
+		double x1Rad = Math.toRadians(x1);
+		double x2Rad = Math.toRadians(x2);
+
+		double a = Math.pow(Math.sin(dx/2),2) + Math.pow(Math.sin(dy/2),2) * Math.cos(x1Rad) * Math.cos(x2Rad);
+		double c = 2 * Math.asin(Math.sqrt(a));
+
+		float dist = (float) (6372.8*c);
+
+		return dist;
+	}
+
+}

@@ -1,0 +1,18 @@
+package mapaProjecao;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main (String[] args){
+
+		Scanner in = new Scanner(System.in);
+		FabricaAbstrata fb;
+		MapaProjecao mp;
+
+		System.out.println("Selecione uma opção de execução (1-4):");
+		String opcao =
+
+	}
+
+}

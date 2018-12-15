@@ -1,0 +1,10 @@
+package mapaProjecao;
+
+public class FabricaMapaLatLong implements FabricaAbstrata {
+
+	@Override
+	public MapaProjecao criarMapaProjecao(float x, float y) {
+		return new MapaProjecaoLatLong(x, y);
+	}
+
+}

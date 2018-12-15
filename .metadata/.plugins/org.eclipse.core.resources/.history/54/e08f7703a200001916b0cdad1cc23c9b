@@ -1,0 +1,45 @@
+package mapaProjecao;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main (String[] args){
+
+		Scanner in = new Scanner(System.in);
+		FabricaAbstrata fb;
+		MapaProjecao mapaProj;
+
+		System.out.print("Selecione uma opção de execução (1-4): ");
+		String opcao = in.nextLine();
+
+		switch(opcao){
+		
+		case "1": // Execução 1 - Latitude/Longitude pela Adaptadora 1
+			fb = FabricaMapaProjLatLong.instancia();
+			mapaProj = fb.criarMapaProjecao();
+			mapaProj.setAdaptadora(new AdaptadoraConcreta2());
+			System.out.printf("Distância calculada: %f", mapaProj.calcularDistancia(-19.0f, -43.0f, -19.0f, -43.0f));
+			break;
+			
+		case "2": // Execução 2 - Latitude/Longitude pela Adaptadora 2
+			fb = FabricaMapaProjLatLong.instancia();
+			mapaProj = fb.criarMapaProjecao();
+			mapaProj.setAdaptadora(new AdaptadoraConcreta1());
+			System.out.printf("Distância calculada: %f", mapaProj.calcularDistancia(-19.0f, -43.0f, -19.0f, -43.0f));
+			break;
+		
+		case "3": // Execução 3 - UTM pela Adaptadora 1
+			break;
+		
+		case "4": // Execução 4 - UTM pela Adaptadora 2
+			break;
+		
+		default:
+			System.out.println("\nNão foi escolhida nenhuma opção.");
+		
+		}
+
+	}
+
+}

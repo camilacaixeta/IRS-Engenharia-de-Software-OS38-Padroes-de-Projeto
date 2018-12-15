@@ -1,0 +1,16 @@
+package mapaProjecao;
+
+public class MapaProjecaoLatLong extends MapaProjecao {
+
+	public MapaProjecaoLatLong(float coordX, float coordY) {
+		super(coordX, coordY);
+	}
+
+	@Override
+	public double CalcularDistancia(int x1, int y1, int x2, int y2) {
+		if (this.getAdaptadoraAbstrata() == null)
+			return 0;
+		return this.getAdaptadoraAbstrata().DistanciaLatLong(x1, y1, x2, y2);
+	}
+	
+}

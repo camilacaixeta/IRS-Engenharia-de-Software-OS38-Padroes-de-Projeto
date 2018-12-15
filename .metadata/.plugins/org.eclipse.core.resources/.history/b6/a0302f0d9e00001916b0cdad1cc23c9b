@@ -1,0 +1,10 @@
+package mapaProjecao;
+
+public class MapaProjecaoLatLong extends MapaProjecao {
+
+	public MapaProjecaoLatLong(float coordX, float coordY) {
+		super(coordX, coordY);
+	}
+
+
+}
